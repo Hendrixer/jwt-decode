@@ -1,6 +1,6 @@
 {
   "name": "jwt-express-decode",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "jwt decoding used with expess config",
   "main": "index.js",
   "scripts": {
