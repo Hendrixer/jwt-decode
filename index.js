@@ -4,11 +4,12 @@ var jwt = require('jwt-simple');
 
 
 exports.decode = function(options, safeRoutes){
-  var safe, headerToken, secret;
+  var safe, headerToken, body, secret;
 
   if(options){
     options.secret ? secret = options.secret : secret = 0;
     options.header ? headerToken = options.header : headerToken = 0;
+    options.req ? body = options.body: body = 0;
   }
 
   if(safeRoutes && Array.isArray(safeRoutes)){
@@ -23,12 +24,8 @@ exports.decode = function(options, safeRoutes){
     }
 
     if(req.headers[headerToken]){
-      var token = jwt.decode(req.headers.token, secret);
-      req.user = {
-        number: token.number,
-        _id: token._id,
-        verified: token.verified
-      };
+      var token = jwt.decode(req.headers[headerToken], secret);
+      req[body] = token;
       next();
     } else if(!req.headers[headerToken]){
       if(safe[req.url]){
