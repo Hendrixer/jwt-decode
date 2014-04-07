@@ -4,7 +4,7 @@ var jwt = require('jwt-simple');
 
 
 exports.decode = function(options, safeRoutes){
-  var safe, headerToken, body, secret;
+  var safe = {}, headerToken, body, secret;
 
   if(options){
     options.secret ? secret = options.secret : secret = 0;
