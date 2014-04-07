@@ -1,0 +1,28 @@
+{
+  "name": "jwt-decode",
+  "version": "0.1.0",
+  "description": "jwt decoding used with expess config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hendrixer/jwt-decode.git"
+  },
+  "keywords": [
+    "jwt",
+    "express",
+    "token",
+    "auth"
+  ],
+  "author": "Hendrixer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hendrixer/jwt-decode/issues"
+  },
+  "homepage": "https://github.com/Hendrixer/jwt-decode",
+  "dependencies": {
+    "jwt-simple": "^0.2.0"
+  }
+}
