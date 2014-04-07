@@ -1,5 +1,5 @@
 {
-  "name": "jwt-decode",
+  "name": "jwt-express-decode",
   "version": "0.1.0",
   "description": "jwt decoding used with expess config",
   "main": "index.js",
