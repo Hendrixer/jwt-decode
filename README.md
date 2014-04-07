@@ -12,13 +12,14 @@ jwt-express-decode
 
 The  params object must be given as the first argument or an error will be passed along `next(error)`
 
-1. secret = Your JWT token secret
-2. header = the property on the header of the incoming  where the JWT can be found
-3. req = this property name will be attached to the request and set to the decoded token
+1. params.secret = Your JWT token secret.
+2. params.header = the property on the header of the incoming  where the JWT can be found.
+
 
 **Not Required**
 
-1. Whitelist = array of request url's that will not need JWT protection. It's important to remember that when using Express mounting, Express will *strip away* the pre fixed mounted url before the url is inside the middleware. So
+1. params.req = this property name will be attached to the request and set to the decoded token, will be set to `req.token` if no value is passed in.
+2. Whitelist = array of request url's that will not need JWT protection. It's important to remember that when using Express mounting, Express will *strip away* the pre fixed mounted url before the url is inside the middleware. So
 `app.use('/api', doSomething())`. 
 Inside of the `doSomething()` middleware, `req.url` will not include `/api`. So if we sent a request to `/api/users/all` the url inside `doSomething` will be `/users/all`.
 
